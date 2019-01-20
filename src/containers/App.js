@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Cockpit from '../components/Cockpit/Cockpit'
 import Persons from '../components/Persons/Persons'
 
 class App extends Component {
@@ -70,9 +71,9 @@ class App extends Component {
 
     return (
       <div className='App'>
-        <button className={btnClass} onClick={this.togglePersonsHandler}>
-          Toggle Persons
-        </button>
+        <Cockpit
+          toggle={this.togglePersonsHandler}
+        />
         {persons}
       </div>
     );
