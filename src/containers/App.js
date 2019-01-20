@@ -47,7 +47,6 @@ class App extends Component {
 
   render() {
     let persons = null
-    let btnClass = ''
 
     if (this.state.showPersons) {
       persons = (
@@ -61,16 +60,17 @@ class App extends Component {
       )
     }
 
-    const assignedClasses = []
+    const assignedClasses = ['app']
 
     if (this.state.persons.length <= 2) {
       assignedClasses.push('red')
-    }else if (this.state.persons.length <= 1) {
+    }
+    if (this.state.persons.length <= 1) {
       assignedClasses.push('bold')
     }
 
     return (
-      <div className='App'>
+      <div className={assignedClasses.join(' ')}>
         <Cockpit
           toggle={this.togglePersonsHandler}
         />
